@@ -3,18 +3,18 @@ package email
 import (
 	"log"
 	"os"
-
 	"gopkg.in/gomail.v2"
 )
 
-// SendEmail sends an email notification
 func SendEmail(to string, subject string, body string) {
+    if to == "" {
+        log.Println("❌ Skipping email: No recipient address provided")
+        return
+    }
+
     smtpEmail := os.Getenv("SMTP_EMAIL")
     smtpHost := os.Getenv("SMTP_HOST")
     smtpPassword := os.Getenv("SMTP_PASSWORD")
-
-    log.Println("SMTP_EMAIL:", smtpEmail)
-    log.Println("SMTP_HOST:", smtpHost)
 
     if smtpEmail == "" || smtpHost == "" || smtpPassword == "" {
         log.Println("❌ Missing SMTP credentials")
@@ -32,14 +32,6 @@ func SendEmail(to string, subject string, body string) {
     if err := d.DialAndSend(m); err != nil {
         log.Println("❌ Failed to send email:", err)
     } else {
-        log.Println("📩 Email sent successfully!")
+        log.Println("📩 Email sent successfully to", to)
     }
-}
-
-// HandleMessage processes Kafka messages and sends email
-func HandleMessage(message []byte) {
-	log.Println("Processing message:", string(message))
-
-	// Send email
-	SendEmail("telmangadimov7@gmail.com", "New Order Received", "Your order has been placed successfully!")
 }
