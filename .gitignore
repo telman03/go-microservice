@@ -29,6 +29,9 @@ Thumbs.db
 # Environment variables
 .env
 *.env
+/notification-service/.env
+/order-service/.env
+/user-service/.env
 **/.env
 .env.local
 .env.*.local
