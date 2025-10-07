@@ -2,14 +2,14 @@
 
 This project is a microservices-based architecture built using **Golang, Fiber, Kafka, PostgreSQL, and Docker**. It consists of multiple services that communicate asynchronously via Kafka, including a **User Service** and a **Notification Service**.
 
-## 📌 Features
+##  Features
 - **User Service:** Manages user accounts and provides user details via REST API.
 - **Notification Service:** Listens for Kafka messages and sends notifications via email.
 - **Kafka Integration:** Uses Kafka for asynchronous messaging between microservices.
 - **PostgreSQL Database:** Stores user and notification data.
 - **Dockerized Setup:** Services run in Docker containers for easy deployment.
 
-## 🏗️ Microservices Overview
+##  Microservices Overview
 
 ### 1️⃣ **User Service** (`user-service`)
 - Manages user accounts.
@@ -23,22 +23,22 @@ This project is a microservices-based architecture built using **Golang, Fiber, 
 - Stores notifications in the database.
 - Sends email notifications using `gomail`.
 
-## 🚀 Tech Stack
+## Tech Stack
 - **Backend:** Golang with Fiber
 - **Message Broker:** Apache Kafka
 - **Database:** PostgreSQL
 - **Docker:** Containerized microservices
 - **Environment Management:** `.env` files
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
-### 1️⃣ **Clone the repository**
+### 1️ **Clone the repository**
 ```sh
 git clone https://github.com/telman03/go-microservices.git
 cd go-microservices
 ```
 
-### 2️⃣ **Set up environment variables**
+### 2️ **Set up environment variables**
 Create a `.env` file in both `user-service` and `notification-service` directories:
 
 #### Example `.env` for User Service
@@ -59,12 +59,12 @@ EMAIL_USER=your_email@example.com
 EMAIL_PASSWORD=your_password
 ```
 
-### 3️⃣ **Run the services with Docker**
+### 3️ **Run the services with Docker**
 ```sh
 docker-compose up --build
 ```
 
-### 4️⃣ **Run services locally**
+### 4️ **Run services locally**
 
 #### Start User Service
 ```sh
@@ -78,7 +78,7 @@ cd notification-service
 go run main.go
 ```
 
-## 🛠️ API Endpoints
+##  API Endpoints
 
 ### **User Service API**
 | Method | Endpoint       | Description         |
@@ -88,7 +88,7 @@ go run main.go
 ### **Notification Service** (Consumes Kafka Events)
 - Listens for `order-events` topic and sends email notifications.
 
-## 📬 Kafka Event Format (Order Event)
+##  Kafka Event Format (Order Event)
 ```json
 {
   "user_id": 1,
@@ -96,13 +96,13 @@ go run main.go
 }
 ```
 
-## 📩 Email Notification Example
+##  Email Notification Example
 ```
 Subject: Order Confirmation
 Message: Your order of $99.99 has been placed successfully!
 ```
 
-## 🏆 Contributing
+##  Contributing
 Feel free to contribute by opening an issue or submitting a pull request!
 
 ## 📄 License
