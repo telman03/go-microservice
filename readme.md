@@ -11,13 +11,13 @@ This project is a microservices-based architecture built using **Golang, Fiber, 
 
 ##  Microservices Overview
 
-### 1️⃣ **User Service** (`user-service`)
+### **User Service** (`user-service`)
 - Manages user accounts.
 - Exposes API endpoints to retrieve user details.
 - Built with **Fiber** (Go Web Framework).
 - Stores user data in **PostgreSQL**.
 
-### 2️⃣ **Notification Service** (`notification-service`)
+###  **Notification Service** (`notification-service`)
 - Listens for order-related events from Kafka.
 - Fetches user details from the **User Service** via REST API.
 - Stores notifications in the database.
@@ -32,13 +32,13 @@ This project is a microservices-based architecture built using **Golang, Fiber, 
 
 ##  Installation & Setup
 
-### 1️ **Clone the repository**
+### **Clone the repository**
 ```sh
 git clone https://github.com/telman03/go-microservices.git
 cd go-microservices
 ```
 
-### 2️ **Set up environment variables**
+### **Set up environment variables**
 Create a `.env` file in both `user-service` and `notification-service` directories:
 
 #### Example `.env` for User Service
@@ -59,12 +59,12 @@ EMAIL_USER=your_email@example.com
 EMAIL_PASSWORD=your_password
 ```
 
-### 3️ **Run the services with Docker**
+### **Run the services with Docker**
 ```sh
 docker-compose up --build
 ```
 
-### 4️ **Run services locally**
+###  **Run services locally**
 
 #### Start User Service
 ```sh
@@ -101,10 +101,4 @@ go run main.go
 Subject: Order Confirmation
 Message: Your order of $99.99 has been placed successfully!
 ```
-
-##  Contributing
-Feel free to contribute by opening an issue or submitting a pull request!
-
-## 📄 License
-This project is open-source and available under the MIT License.
 
